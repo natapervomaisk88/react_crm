@@ -1,20 +1,25 @@
+import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { Card } from "./components/Card/Card";
 import { Navbar } from "./components/Navbar/Navbar";
-import { Article, list_of_articles } from "./models/article";
+import { list_of_articles } from "./models/article";
+import { Home } from "./components/Home/Home";
+import { ListOfArticles } from "./components/ListOfArticles/ListOfArticles";
+import { NotFoundPage } from "./components/NotFoundPage/NotFoundPage";
 
 function App() {
   const main_title: string = "My System";
   return (
     <>
-      <Navbar my_title={main_title} />
-      <div className="row">
-        {list_of_articles.map((el) => (
-          <div className="col s12 m6 l3">
-            <Card article={el} />
-          </div>
-        ))}
-      </div>
+      <BrowserRouter>
+        <Navbar my_title={main_title} />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route index element={<Home />} />
+          <Route path="/articles" element={<ListOfArticles />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

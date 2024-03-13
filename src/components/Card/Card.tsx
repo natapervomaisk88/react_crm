@@ -1,5 +1,6 @@
 import "./Card.css";
 import { Article } from "../../models/article";
+import { Link } from "react-router-dom";
 
 export function Card(props: Article) {
   const article = { ...props.article };
@@ -14,7 +15,7 @@ export function Card(props: Article) {
           <i className="material-icons right">{article.description}</i>
         </span>
         <p>
-          <a href="#">This is a link</a>
+          <a href="#">Detail</a>
         </p>
       </div>
       <div className="card-reveal">
