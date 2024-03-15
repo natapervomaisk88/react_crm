@@ -17,6 +17,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route index element={<Home />} />
           <Route path="/articles" element={<ListOfArticles />} />
+          <Route path="/articles/:id" element={<Card />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </BrowserRouter>
