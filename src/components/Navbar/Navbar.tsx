@@ -17,7 +17,7 @@ export function Navbar(props: any) {
               <Link to="articles">List Of Articles</Link>
             </li>
             <li>
-              <a href="add_article">Add Article</a>
+              <a href="add_card">Add Article</a>
             </li>
           </ul>
         </div>
